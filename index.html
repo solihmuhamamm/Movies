@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  
+  </head>
+  <body class="bg-black">
+    <form id="form" class="mt-4 flex justify-center gap-4 items-center">
+      <input
+        class="shadow-md border px-3 w-65"
+        type="text"
+        name="search"
+        placeholder="search..."
+      />
+      <select class="border" name="genre" id="genreSelect">
+        <option value="all">All</option>
+      </select>
+      <select class="border" name="sortBy">
+        <option value="a-z">A-Z</option>
+        <option value="z-a">Z-A</option>
+      </select>
+      <button
+        class="py-1 px-6 text-white rounded-md bg-amber-500"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+
+    <ul class="flex px-4 gap-4 justify-between flex-wrap mt-16" id="list"></ul>
+
+    <template id="modal-template">
+      <div
+        id="modal"
+        class="fixed flex items-center justify-center top-0 right-0 left-0 bottom-0 z-10"
+        style="background-color: rgba(0, 0, 0, 0.8)"
+      >
+        <div
+          class="shadow-md w-[800px] relative overflow-auto shadow-white text-white p-4 py-16 bg-black"
+        >
+          <button
+            onclick="deleteModal()"
+            class="absolute top-4 right-6 font-bold text-3xl"
+          >
+            X
+          </button>
+          <div class="flex justify-center">
+            <iframe
+              width="560"
+              height="315"
+              src=""
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <h2 class="my-4 text-3xl font-bold text-center">Shazam</h2>
+          <h3 class="text-xl text-center my-8">Genres: Action, Comedy</h3>
+          <p class="text-xl text-center w-2/3 mx-auto">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque ut
+            tempora minus aliquam sint eius quia eos nobis distinctio
+            doloremque.
+          </p>
+        </div>
+      </div>
+    </template>
+
+    <template id="card-template">
+      <li
+        class="flex flex-col justify-between w-[300px] pb-4 shadow-xl rounded-md overflow-hidden items-center"
+      >
+        <img
+          src="https://picsum.photos/300/400"
+          width="300"
+          height="400"
+          alt=""
+        />
+        <h2 class="my-4 text-2xl font-bold text-center text-white">Shazam</h2>
+        <button class="py-2 px-4 text-white rounded-md bg-blue-300">
+          Show more
+        </button>
+      </li>
+    </template>
+
+    <script src="./util.js"></script>
+    <script src="./films.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
